@@ -20,7 +20,7 @@
   "types": "dist/index.d.ts",
   "version": "0.0.0",
   "devDependencies": {
-    "@types/node": "^18.7.9"
+    "@types/node": "^18.7.11"
   },
-  "content-fingerprint": "ac80945fc57319776770a4f090a38086fb8d001b"
+  "content-fingerprint": "6b609a01acae839a56bcd90bacaaaa849bc7b9e8"
 }
