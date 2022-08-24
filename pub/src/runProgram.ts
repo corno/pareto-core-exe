@@ -3,7 +3,6 @@ import * as pt from "pareto-core-types"
 
 import * as process from "process"
 import * as stream from "stream"
-import { IStreamConsumer } from "./etc"
 
 export type ProgramMain = (
     $: {
@@ -20,13 +19,13 @@ export type ProgramMain = (
     $d: {
         startAsync: ($: pt.AsyncNonValue) => void
     }
-) => IStreamConsumer<string, null>
+) => void
 
 export function runProgram(
     $c: ProgramMain
 ): void {
 
-    const sc = $c(
+    $c(
         {
             arguments: process.argv.slice(2) //strip 'node' and the script name
         },
@@ -47,18 +46,4 @@ export function runProgram(
         },
     )
 
-    process.stdin.setEncoding("utf-8")
-    process.stdin.pipe(
-        new stream.Writable({
-            defaultEncoding: "utf-8",
-            write: function (data, _encoding, callback) {
-                //eslint-disable-next-line
-                sc.onData(data.toString())
-                callback()
-            },
-        })
-    ).on('finish', () => {
-        sc.onEnd(null)
-    })
-    sc.onData
 }
