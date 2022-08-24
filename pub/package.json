@@ -22,5 +22,8 @@
   "devDependencies": {
     "@types/node": "^18.7.11"
   },
-  "content-fingerprint": "6b609a01acae839a56bcd90bacaaaa849bc7b9e8"
+  "dependencies": {
+    "pareto-core-types": "^0.1.0"
+  },
+  "content-fingerprint": "243fed756bd08348f3769827cac26625871927c0"
 }

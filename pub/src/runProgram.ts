@@ -1,43 +1,64 @@
+
+import * as pt from "pareto-core-types"
+
 import * as process from "process"
-import { processExit } from "./etc"
+import * as stream from "stream"
+import { IStreamConsumer } from "./etc"
+
+export type ProgramMain = (
+    $: {
+        arguments: pt.Array<string>
+    },
+    $i: {
+        stdout: {
+            write: ($: string) => void
+        },
+        stderr: {
+            write: ($: string) => void
+        }
+    },
+    $d: {
+        startAsync: ($: pt.AsyncNonValue) => void
+    }
+) => IStreamConsumer<string, null>
 
 export function runProgram(
-    $i: (
-        $: {
-            argument?: string
-        },
-        // $i: {
-        //     onDone: ($: {
-        //         success: boolean,
-        //     }) => void
-        // }
-    ) => void
+    $c: ProgramMain
 ): void {
-    const pa = process.argv
-    // let isDone = false
-    // process.on("beforeExit", () => {
-    //     if (!isDone) {
-    //         throw new Error("process did not terminate properly, isDone() is never called")
-    //     }
-    // })
-    if (pa.length > 3) { //expected format is 'node <scriptname> <argument>'
-        console.error("expecting either 0 or 1 argument, not more")
-        processExit(1)
-    } else {
-        $i(
-            {
-                argument: pa[2],
+
+    const sc = $c(
+        {
+            arguments: process.argv.slice(2) //strip 'node' and the script name
+        },
+        {
+            stderr: {
+                write: process.stderr.write
             },
-            // {
-            //     onDone: ($) => {
-            //         if (isDone) {
-            //             throw new Error("process did not terminate properly, isDone() is called multiple times")
-            //         }
-            //         if (!$.success) {
-            //             process.exit(1)
-            //         }
-            //     }
-            // }
-        )
-    }
+            stdout: {
+                write: process.stdout.write
+            },
+        },
+        {
+            startAsync: ($) => {
+                $.execute(() => {
+
+                })
+            }
+        },
+    )
+
+    process.stdin.setEncoding("utf-8")
+    process.stdin.pipe(
+        new stream.Writable({
+            defaultEncoding: "utf-8",
+            write: function (data, _encoding, callback) {
+                //eslint-disable-next-line
+                sc.onData(data.toString())
+                callback()
+            },
+        })
+    ).on('finish', () => {
+        sc.onEnd(null)
+    })
+    sc.onData
 }
