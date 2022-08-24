@@ -25,7 +25,7 @@ export function runProgram(
     $c: ProgramMain
 ): void {
 
-    $c(
+    const sc = $c(
         {
             arguments: process.argv.slice(2) //strip 'node' and the script name
         },
@@ -46,4 +46,17 @@ export function runProgram(
         },
     )
 
+    // process.stdin.setEncoding("utf-8")
+    // process.stdin.pipe(
+    //     new stream.Writable({
+    //         defaultEncoding: "utf-8",
+    //         write: function (data, _encoding, callback) {
+    //             //eslint-disable-next-line
+    //             sc.onData(data.toString())
+    //             callback()
+    //         },
+    //     })
+    // ).on('finish', () => {
+    //     sc.onEnd(null)
+    // })
 }
