@@ -20,10 +20,10 @@
   "types": "dist/index.d.ts",
   "version": "0.3.0",
   "devDependencies": {
-    "@types/node": "^18.7.13"
+    "@types/node": "^18.7.14"
   },
   "dependencies": {
-    "pareto-core-types": "^0.1.0"
+    "pareto-core-types": "^0.2.0"
   },
-  "content-fingerprint": "704d6521dfec415b6fdf4f05e55e0cc61232ce96"
+  "content-fingerprint": "37084b1d3f6d0d2b736e71f5f590412ec54a3785"
 }
