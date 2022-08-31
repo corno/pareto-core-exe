@@ -25,16 +25,21 @@ export function runProgram(
     $c: ProgramMain
 ): void {
 
+    //process.stderr.setEncoding('utf-8')
     const sc = $c(
         {
             arguments: process.argv.slice(2) //strip 'node' and the script name
         },
         {
             stderr: {
-                write: process.stderr.write
+                write: ($) => {
+                    process.stderr.write($)
+                }
             },
             stdout: {
-                write: process.stdout.write
+                write: ($) => {
+                    process.stdout.write($)
+                }
             },
         },
         {
