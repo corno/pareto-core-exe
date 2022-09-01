@@ -29,6 +29,9 @@ export function runProgram(
                 $.execute(() => {
 
                 })
+            },
+            setExitCodeToFailed: () => {
+                process.exit(1)
             }
         },
     )
