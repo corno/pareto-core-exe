@@ -23,7 +23,8 @@
     "@types/node": "^18.7.14"
   },
   "dependencies": {
+    "api-pareto-main": "^0.1.0",
     "pareto-core-types": "^0.2.0"
   },
-  "content-fingerprint": "ac20b5efdf65ae8d30bb1b58a52fa1c801e00d21"
+  "content-fingerprint": "0f32e81edcf808ed378c8c7ccd1fd39d3ef648c9"
 }

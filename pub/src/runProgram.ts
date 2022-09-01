@@ -1,28 +1,10 @@
 
-import * as pt from "pareto-core-types"
 
+import * as main from "api-pareto-main"
 import * as process from "process"
-import * as stream from "stream"
-
-export type ProgramMain = (
-    $: {
-        arguments: pt.Array<string>
-    },
-    $i: {
-        stdout: {
-            write: ($: string) => void
-        },
-        stderr: {
-            write: ($: string) => void
-        }
-    },
-    $d: {
-        startAsync: ($: pt.AsyncNonValue) => void
-    }
-) => void
 
 export function runProgram(
-    $c: ProgramMain
+    $c: main.ProgramMain
 ): void {
 
     //process.stderr.setEncoding('utf-8')
