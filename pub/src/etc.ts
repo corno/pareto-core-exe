@@ -5,13 +5,13 @@ export type IStreamConsumer<DataType, EndDataType> = {
     onEnd(data: EndDataType): void;
 }
 
-export function subscribeToProcessBeforeExit(
-    $i: ($: number) => void,
-) {
-    process.on("beforeExit", ($) => {
-        $i($)
-    })
-}
+// export function subscribeToProcessBeforeExit(
+//     $i: ($: number) => void,
+// ) {
+//     process.on("beforeExit", ($) => {
+//         $i($)
+//     })
+// }
 
 
 export function processExit(code: number): never {

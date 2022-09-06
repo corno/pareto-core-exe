@@ -2,15 +2,17 @@
 
 import * as main from "api-pareto-main"
 import * as process from "process"
+import * as pi from "pareto-core-internals"
+
 
 export function runProgram(
-    $c: main.ProgramMain
+    $c: main.PProgramMain
 ): void {
 
     //process.stderr.setEncoding('utf-8')
     const sc = $c(
         {
-            arguments: process.argv.slice(2) //strip 'node' and the script name
+            arguments: pi.wrapRawArray(process.argv.slice(2))//strip 'node' and the script name
         },
         {
             stderr: {
@@ -23,16 +25,12 @@ export function runProgram(
                     process.stdout.write($)
                 }
             },
-        },
-        {
-            startAsync: ($) => {
-                $.execute(() => {
-
-                })
-            },
             setExitCodeToFailed: () => {
                 process.exit(1)
             }
+        },
+        ($, $c) => {
+            $._execute($c)
         },
     )
 
