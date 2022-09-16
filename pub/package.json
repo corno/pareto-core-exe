@@ -20,12 +20,12 @@
   "types": "dist/index.d.ts",
   "version": "0.12.0",
   "devDependencies": {
-    "@types/node": "^18.7.15"
+    "@types/node": "^18.7.18"
   },
   "dependencies": {
-    "api-pareto-main": "^0.8.0",
-    "pareto-core-internals": "^0.6.0",
-    "pareto-core-types": "^0.5.0"
+    "api-pareto-main": "^0.9.0",
+    "pareto-core-internals": "^0.7.0",
+    "pareto-core-types": "^0.6.0"
   },
-  "content-fingerprint": "a632164c9a162579f6e4d3f3a071da9ff978c9c7"
+  "content-fingerprint": "ec28a7c235dfeaf3395d6b471d1c91d529b429bd"
 }

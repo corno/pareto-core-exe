@@ -6,7 +6,7 @@ import * as pi from "pareto-core-internals"
 
 
 export function runProgram(
-    $c: main.PProgramMain
+    $c: main.FProgramMain
 ): void {
 
     //process.stderr.setEncoding('utf-8')

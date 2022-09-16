@@ -1,2 +1,2 @@
-export * from "./runProgram"
-export * from "./etc"
+export * from "./functions/runProgram"
+export * from "./functions/functions"
