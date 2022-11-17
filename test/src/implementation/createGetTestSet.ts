@@ -5,7 +5,7 @@ import * as pl from "pareto-core-lib"
 
 import * as test from "lib-pareto-test"
 
-import * as pub from "../../../pub/dist"
+import * as pub from "../../../pub"
 
 export function createGetTestSet($d: {}): test.GetTestSet {
     return () => {
