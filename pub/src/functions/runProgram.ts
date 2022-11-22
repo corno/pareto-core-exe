@@ -1,6 +1,6 @@
 
 
-import * as main from "api-pareto-main"
+import * as main from "glo-pareto-main"
 import * as process from "process"
 import * as pi from "pareto-core-internals"
 
@@ -28,10 +28,7 @@ export function runProgram(
             setExitCodeToFailed: () => {
                 process.exit(1)
             }
-        },
-        ($, $c) => {
-            $._execute($c)
-        },
+        }
     )
 
     // process.stdin.setEncoding("utf-8")

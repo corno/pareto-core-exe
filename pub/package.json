@@ -23,9 +23,8 @@
     "@types/node": "^18.11.9"
   },
   "dependencies": {
-    "api-pareto-main": "^0.9.0",
-    "pareto-core-internals": "^0.9.0",
-    "pareto-core-types": "^0.7.0"
+    "glo-pareto-main": "^0.1.0",
+    "pareto-core-internals": "^0.9.0"
   },
-  "content-fingerprint": "7cbbb0cbce746f95eea5673d7d034e5f767e50a0"
+  "content-fingerprint": "842f8984679f8a75b6c8bc08a40543591229e06c"
 }
