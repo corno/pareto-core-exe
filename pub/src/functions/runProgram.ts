@@ -6,7 +6,7 @@ import * as pi from "pareto-core-internals"
 
 
 export function runProgram(
-    $c: main.FProgramMain
+    $c: main.PProgramMain
 ): void {
 
     //process.stderr.setEncoding('utf-8')
@@ -14,21 +14,21 @@ export function runProgram(
         {
             arguments: pi.wrapRawArray(process.argv.slice(2))//strip 'node' and the script name
         },
-        {
-            stderr: {
-                write: ($) => {
-                    process.stderr.write($)
-                }
-            },
-            stdout: {
-                write: ($) => {
-                    process.stdout.write($)
-                }
-            },
-            setExitCodeToFailed: () => {
-                process.exit(1)
-            }
-        }
+        // { 
+        //     stderr: {
+        //         write: ($) => {
+        //             process.stderr.write($)
+        //         }
+        //     },
+        //     stdout: {
+        //         write: ($) => {
+        //             process.stdout.write($)
+        //         }
+        //     },
+        //     setExitCodeToFailed: () => {
+        //         process.exit(1)
+        //     }
+        // }
     )
 
     // process.stdin.setEncoding("utf-8")
