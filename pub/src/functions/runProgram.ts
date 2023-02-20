@@ -1,12 +1,13 @@
+import * as pt from 'pareto-core-types'
+import * as pi from 'pareto-core-internals'
 
-
-import * as main from "glo-pareto-main"
 import * as process from "process"
-import * as pi from "pareto-core-internals"
 
 
 export function runProgram(
-    $c: main.PProgramMain
+    $c: ($: {
+        readonly "arguments": pt.Array<string>;
+    }) => void
 ): void {
 
     //process.stderr.setEncoding('utf-8')
