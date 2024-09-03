@@ -1,29 +1,31 @@
 {
+  "name": "pareto-core-exe",
+  "version": "0.22.0",
+  "license": "ISC",
+  "description": "this is one of the core packages for Pareto. it provides functionality to create executables",
   "author": "Corno",
-  "bin": {},
-  "files": [
-    "dist"
+  "keywords": [
+    "pareto",
+    "exe",
+    "executable"
   ],
-  "keywords": [],
-  "main": "./dist/index.js",
+  "homepage": "https://github.com/corno/pareto-core#readme",
   "bugs": {
     "url": "https://github.com/corno/pareto-core/issues"
   },
-  "description": "",
-  "homepage": "https://github.com/corno/pareto-core#readme",
-  "license": "ISC",
-  "name": "pareto-core-exe",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/corno/pareto-core.git"
-  },
+  "main": "./dist/index.js",
   "types": "dist/index.d.ts",
-  "version": "0.21.1",
-  "devDependencies": {
-    "@types/node": "^18.11.9"
-  },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "pareto-core-internals": "^0.22.0"
   },
-  "content-fingerprint": "5c469cb85e23b7f82334d40e8b55e92491df02f9"
+  "devDependencies": {
+    "@types/node": "^18.11.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corno/pareto-core.git"
+  }
 }
