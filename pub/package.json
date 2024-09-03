@@ -23,7 +23,7 @@
     "@types/node": "^18.11.9"
   },
   "dependencies": {
-    "pareto-core-internals": "^0.19.2"
+    "pareto-core-internals": "^0.22.0"
   },
   "content-fingerprint": "5c469cb85e23b7f82334d40e8b55e92491df02f9"
 }
